@@ -16,15 +16,42 @@
 // https://osu.ppy.sh/oauth/authorize
 //this get req will provide user with their auth token for our app to run with their auth token! callback should maybe work automaticly ?
 
-//EXAMPLE REQ 
 
+//EXAMPLES
+
+
+// GET https://osu.ppy.sh/oauth/authorize
 /*Example request:
 curl --request GET \
     --get "https://osu.ppy.sh/oauth/authorize?client_id=1&redirect_uri=http%3A%2F%2Flocalhost%3A4000&res
+*/
+
+
+//POST https://osu.ppy.sh/oauth/token
+/*Example request:
+curl --request POST \
+    "https://osu.ppy.sh/oauth/token" \
+    --header "Accept: application/json" \
+    --header "Content-Type: application/x-www-form-urlencoded" \
+    --data "client_id=1&client_secret=clientsecret&code=receivedcode&grant_type=authorization_code&red
+*/
+
+// POST https://osu.ppy.sh/oauth/token
+/*Example request:
+curl --request POST \
+    "https://osu.ppy.sh/oauth/token" \
+    --header "Accept: application/json" \
+    --header "Content-Type: application/x-www-form-urlencoded" \
+    --data "client_id=1&client_secret=clientsecret&grant_type=refresh_token&refresh_token=longstring&sco*/
+
+
+//     /beatmaps/{beatmap}
+// this gets beatmap by beatmap id, since all beatmap ids are just number strings we should be able to generate lots of beatmap ids completely randomly
 
 
 
 
-    */
 
 const axios = require("axios").default;
+
+
